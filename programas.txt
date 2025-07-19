@@ -1,0 +1,31 @@
+Visual Studio Code https://code.visualstudio.com/download
+python 3.11 - https://www.python.org/downloads/
+
+Librerías pip install
+os
+pandas
+time
+sqlite3
+requests
+asyncio
+asyncua
+
+Power Monitor: carpeta
+
+UaExpert: carpeta
+
+SQLite: carpeta
+
+NodeRed:NodeJs - https://nodejs.org/en/ (carpeta)
+npm install -g --unsafe-perm node-red
+
+Scripts
+
+DB Browser: Carpeta
+
+
+zerotier: https://www.zerotier.com/download/
+
+c:/users/sefundicion/appdata/local/programs/python/python313
+
+C:\Program Files\Python313

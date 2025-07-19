@@ -1,0 +1,2228 @@
+[
+    {
+        "id": "8e5d400a7c905467",
+        "type": "OpcUa-Client",
+        "z": "2553175a65489a4b",
+        "endpoint": "75c70c8f430906f5",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": true,
+        "name": "",
+        "x": 520,
+        "y": 140,
+        "wires": [
+            [
+                "21a265741208b583"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "46507657cd56ea3e",
+        "type": "debug",
+        "z": "2553175a65489a4b",
+        "name": "debug 18",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "16bb13f69813bc65",
+        "type": "inject",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "5514af9a466ec25d"
+            ]
+        ]
+    },
+    {
+        "id": "5514af9a466ec25d",
+        "type": "OpcUa-Item",
+        "z": "2553175a65489a4b",
+        "item": "ns=3;s=AASROOT.PowerMonitor_51A.OperationalData.VoltageMeasure1.Value",
+        "datatype": "Double",
+        "value": "Value",
+        "name": "Volt_1",
+        "x": 290,
+        "y": 140,
+        "wires": [
+            [
+                "8e5d400a7c905467"
+            ]
+        ]
+    },
+    {
+        "id": "7c731f1da15d1ff3",
+        "type": "ui_chart",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "group": "104ee1233394cf46",
+        "order": 24,
+        "width": 10,
+        "height": 7,
+        "label": "Voltaje",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "300",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 950,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "21a265741208b583",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 5",
+        "func": "msg.payload = Number(msg.payload.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 140,
+        "wires": [
+            [
+                "7c731f1da15d1ff3",
+                "46507657cd56ea3e",
+                "83be40914972777b"
+            ]
+        ]
+    },
+    {
+        "id": "bb622de96df9e18a",
+        "type": "OpcUa-Client",
+        "z": "2553175a65489a4b",
+        "endpoint": "75c70c8f430906f5",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": true,
+        "name": "",
+        "x": 520,
+        "y": 340,
+        "wires": [
+            [
+                "468092992320d966"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "756364f745dbb9d6",
+        "type": "debug",
+        "z": "2553175a65489a4b",
+        "name": "debug 19",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "44d60e784d949306",
+        "type": "inject",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 340,
+        "wires": [
+            [
+                "213981766d69cb8e"
+            ]
+        ]
+    },
+    {
+        "id": "213981766d69cb8e",
+        "type": "OpcUa-Item",
+        "z": "2553175a65489a4b",
+        "item": "ns=3;s=AASROOT.PowerMonitor_51A.OperationalData.VoltageMeasure2.Value",
+        "datatype": "Float",
+        "value": "Value",
+        "name": "",
+        "x": 320,
+        "y": 340,
+        "wires": [
+            [
+                "bb622de96df9e18a"
+            ]
+        ]
+    },
+    {
+        "id": "468092992320d966",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 6",
+        "func": "msg.payload = Number(msg.payload.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 340,
+        "wires": [
+            [
+                "756364f745dbb9d6",
+                "381b4faa5840fc57",
+                "7c731f1da15d1ff3"
+            ]
+        ]
+    },
+    {
+        "id": "83be40914972777b",
+        "type": "ui_text",
+        "z": "2553175a65489a4b",
+        "group": "104ee1233394cf46",
+        "order": 10,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Voltaje 1 [V]",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 850,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "381b4faa5840fc57",
+        "type": "ui_text",
+        "z": "2553175a65489a4b",
+        "group": "104ee1233394cf46",
+        "order": 11,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Voltaje 2 [V]",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 930,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "811c5c5454fa7d3e",
+        "type": "OpcUa-Client",
+        "z": "2553175a65489a4b",
+        "endpoint": "75c70c8f430906f5",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": true,
+        "name": "",
+        "x": 520,
+        "y": 540,
+        "wires": [
+            [
+                "a3cc07bc8cb82c48"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b122599fee9e7f52",
+        "type": "debug",
+        "z": "2553175a65489a4b",
+        "name": "debug 20",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "194fc01684020e43",
+        "type": "inject",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 540,
+        "wires": [
+            [
+                "d74722f7a9288d1d"
+            ]
+        ]
+    },
+    {
+        "id": "d74722f7a9288d1d",
+        "type": "OpcUa-Item",
+        "z": "2553175a65489a4b",
+        "item": "ns=3;s=AASROOT.PowerMonitor_51A.OperationalData.VoltageMeasure3.Value",
+        "datatype": "Float",
+        "value": "Value",
+        "name": "",
+        "x": 320,
+        "y": 540,
+        "wires": [
+            [
+                "811c5c5454fa7d3e"
+            ]
+        ]
+    },
+    {
+        "id": "a3cc07bc8cb82c48",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 7",
+        "func": "msg.payload = Number(msg.payload.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 540,
+        "wires": [
+            [
+                "b122599fee9e7f52",
+                "a9eefae00ee77ef9",
+                "7c731f1da15d1ff3"
+            ]
+        ]
+    },
+    {
+        "id": "a9eefae00ee77ef9",
+        "type": "ui_text",
+        "z": "2553175a65489a4b",
+        "group": "104ee1233394cf46",
+        "order": 12,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Voltaje 3 [V]",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 930,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "d6430f743ef282e7",
+        "type": "OpcUa-Client",
+        "z": "2553175a65489a4b",
+        "endpoint": "75c70c8f430906f5",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 1700,
+        "y": 140,
+        "wires": [
+            [
+                "e9d8b0d5cf0246c3",
+                "0bda1323241f208e"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ce04431506bf6f14",
+        "type": "debug",
+        "z": "2553175a65489a4b",
+        "name": "debug 21",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2080,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "3b3911422bd1bfe0",
+        "type": "inject",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1320,
+        "y": 140,
+        "wires": [
+            [
+                "c2bb9d5e19f7ec7f"
+            ]
+        ]
+    },
+    {
+        "id": "c2bb9d5e19f7ec7f",
+        "type": "OpcUa-Item",
+        "z": "2553175a65489a4b",
+        "item": "ns=3;s=AASROOT.PowerMonitor_51A.OperationalData.PFAverage.Value",
+        "datatype": "Double",
+        "value": "Value",
+        "name": "",
+        "x": 1500,
+        "y": 140,
+        "wires": [
+            [
+                "d6430f743ef282e7"
+            ]
+        ]
+    },
+    {
+        "id": "1daf3f8a765bda34",
+        "type": "ui_chart",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "group": "104ee1233394cf46",
+        "order": 20,
+        "width": 10,
+        "height": 7,
+        "label": "PF Average",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 2090,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e9d8b0d5cf0246c3",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 8",
+        "func": "msg.payload = Number(msg.payload.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1880,
+        "y": 140,
+        "wires": [
+            [
+                "1daf3f8a765bda34",
+                "ce04431506bf6f14",
+                "cb4a57a6b76118b5",
+                "ca4074863f394162"
+            ]
+        ]
+    },
+    {
+        "id": "19ea7e6e513d1fa7",
+        "type": "OpcUa-Client",
+        "z": "2553175a65489a4b",
+        "endpoint": "75c70c8f430906f5",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": false,
+        "name": "",
+        "x": 1700,
+        "y": 340,
+        "wires": [
+            [
+                "2a2f35aafea6b9bc"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a30f84103c7d174e",
+        "type": "debug",
+        "z": "2553175a65489a4b",
+        "name": "debug 22",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2080,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "0cc3c8b60c559967",
+        "type": "inject",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1320,
+        "y": 340,
+        "wires": [
+            [
+                "41fe4551ec9a319e"
+            ]
+        ]
+    },
+    {
+        "id": "41fe4551ec9a319e",
+        "type": "OpcUa-Item",
+        "z": "2553175a65489a4b",
+        "item": "ns=3;s=AASROOT.PowerMonitor_51A.OperationalData.TotalIntegralActivePower.Value",
+        "datatype": "Float",
+        "value": "Value",
+        "name": "",
+        "x": 1500,
+        "y": 340,
+        "wires": [
+            [
+                "19ea7e6e513d1fa7"
+            ]
+        ]
+    },
+    {
+        "id": "c018bb48486a239d",
+        "type": "ui_chart",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "group": "104ee1233394cf46",
+        "order": 31,
+        "width": 15,
+        "height": 7,
+        "label": "Total_int_act_power",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "2500000",
+        "ymax": "4000000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 2140,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2a2f35aafea6b9bc",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 9",
+        "func": "msg.payload = Number(msg.payload.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1880,
+        "y": 340,
+        "wires": [
+            [
+                "a30f84103c7d174e",
+                "f143258651b22489",
+                "c018bb48486a239d"
+            ]
+        ]
+    },
+    {
+        "id": "cb4a57a6b76118b5",
+        "type": "ui_text",
+        "z": "2553175a65489a4b",
+        "group": "104ee1233394cf46",
+        "order": 3,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "PF Average",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 2090,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "f143258651b22489",
+        "type": "ui_text",
+        "z": "2553175a65489a4b",
+        "group": "104ee1233394cf46",
+        "order": 1,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Total_int_act_power",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 2140,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "63a0ba174baac9c7",
+        "type": "OpcUa-Client",
+        "z": "2553175a65489a4b",
+        "endpoint": "75c70c8f430906f5",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 1700,
+        "y": 540,
+        "wires": [
+            [
+                "1695e376e8434bf4"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "5c935abb34c678eb",
+        "type": "debug",
+        "z": "2553175a65489a4b",
+        "name": "debug 23",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2080,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "a4d37b6fd8cc4d8f",
+        "type": "inject",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1320,
+        "y": 540,
+        "wires": [
+            [
+                "c51bb3e00b81d2f1"
+            ]
+        ]
+    },
+    {
+        "id": "c51bb3e00b81d2f1",
+        "type": "OpcUa-Item",
+        "z": "2553175a65489a4b",
+        "item": "ns=3;s=AASROOT.PowerMonitor_51A.OperationalData.TotalIntegralReactivePower.Value",
+        "datatype": "Float",
+        "value": "Value",
+        "name": "",
+        "x": 1500,
+        "y": 540,
+        "wires": [
+            [
+                "63a0ba174baac9c7"
+            ]
+        ]
+    },
+    {
+        "id": "3a991e1a82054447",
+        "type": "ui_chart",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "group": "104ee1233394cf46",
+        "order": 29,
+        "width": 14,
+        "height": 7,
+        "label": "Total_int_react_power",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "400000",
+        "ymax": "600000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 2140,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1695e376e8434bf4",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 10",
+        "func": "msg.payload = Number(msg.payload.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1880,
+        "y": 540,
+        "wires": [
+            [
+                "5c935abb34c678eb",
+                "f505740277ec9f32",
+                "3a991e1a82054447"
+            ]
+        ]
+    },
+    {
+        "id": "f505740277ec9f32",
+        "type": "ui_text",
+        "z": "2553175a65489a4b",
+        "group": "104ee1233394cf46",
+        "order": 2,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Total_int_react_power",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 2140,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "3d192a33c8ccb3c3",
+        "type": "OpcUa-Client",
+        "z": "2553175a65489a4b",
+        "endpoint": "75c70c8f430906f5",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": true,
+        "name": "",
+        "x": 560,
+        "y": 840,
+        "wires": [
+            [
+                "57729d969e7d85e8"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1a07cb8616f6a478",
+        "type": "debug",
+        "z": "2553175a65489a4b",
+        "name": "debug 24",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "33d20d52d55eb41b",
+        "type": "inject",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 840,
+        "wires": [
+            [
+                "57d347dac48c6733"
+            ]
+        ]
+    },
+    {
+        "id": "57d347dac48c6733",
+        "type": "OpcUa-Item",
+        "z": "2553175a65489a4b",
+        "item": "ns=3;s=AASROOT.PowerMonitor_51A.OperationalData.FrequencyMeasure1.Value",
+        "datatype": "Double",
+        "value": "Value",
+        "name": "",
+        "x": 360,
+        "y": 840,
+        "wires": [
+            [
+                "3d192a33c8ccb3c3"
+            ]
+        ]
+    },
+    {
+        "id": "bb070670a39e0096",
+        "type": "ui_chart",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "group": "104ee1233394cf46",
+        "order": 25,
+        "width": 10,
+        "height": 7,
+        "label": "Frecuencia [Hz]",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "60",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1080,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "57729d969e7d85e8",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 11",
+        "func": "msg.payload = Number(msg.payload.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 840,
+        "wires": [
+            [
+                "bb070670a39e0096",
+                "1a07cb8616f6a478",
+                "41a77c5ee6653257"
+            ]
+        ]
+    },
+    {
+        "id": "acd27e61ad0d939d",
+        "type": "OpcUa-Client",
+        "z": "2553175a65489a4b",
+        "endpoint": "75c70c8f430906f5",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": true,
+        "name": "",
+        "x": 560,
+        "y": 1040,
+        "wires": [
+            [
+                "748cbd9f94da9127"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "df88b79d2131a6e3",
+        "type": "debug",
+        "z": "2553175a65489a4b",
+        "name": "debug 25",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "bb949487e32dcc85",
+        "type": "inject",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 1040,
+        "wires": [
+            [
+                "4a5257ce20297554"
+            ]
+        ]
+    },
+    {
+        "id": "4a5257ce20297554",
+        "type": "OpcUa-Item",
+        "z": "2553175a65489a4b",
+        "item": "ns=3;s=AASROOT.PowerMonitor_51A.OperationalData.FrequencyMeasure2.Value",
+        "datatype": "Float",
+        "value": "Value",
+        "name": "",
+        "x": 360,
+        "y": 1040,
+        "wires": [
+            [
+                "acd27e61ad0d939d"
+            ]
+        ]
+    },
+    {
+        "id": "748cbd9f94da9127",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 12",
+        "func": "msg.payload = Number(msg.payload.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 1040,
+        "wires": [
+            [
+                "df88b79d2131a6e3",
+                "e177d7681baff52c",
+                "bb070670a39e0096"
+            ]
+        ]
+    },
+    {
+        "id": "41a77c5ee6653257",
+        "type": "ui_text",
+        "z": "2553175a65489a4b",
+        "group": "104ee1233394cf46",
+        "order": 14,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Frecuencia 1 [Hz]",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 970,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "e177d7681baff52c",
+        "type": "ui_text",
+        "z": "2553175a65489a4b",
+        "group": "104ee1233394cf46",
+        "order": 15,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Frecuencia 2 [Hz]",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 990,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "6df2a8c3d3b34a5d",
+        "type": "OpcUa-Client",
+        "z": "2553175a65489a4b",
+        "endpoint": "75c70c8f430906f5",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": true,
+        "name": "",
+        "x": 560,
+        "y": 1240,
+        "wires": [
+            [
+                "8f87a0ff0773036a"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "3889d1f9b6247945",
+        "type": "debug",
+        "z": "2553175a65489a4b",
+        "name": "debug 26",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "c792c5bf87d6414e",
+        "type": "inject",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 1240,
+        "wires": [
+            [
+                "0e455647c2c5b613"
+            ]
+        ]
+    },
+    {
+        "id": "0e455647c2c5b613",
+        "type": "OpcUa-Item",
+        "z": "2553175a65489a4b",
+        "item": "ns=3;s=AASROOT.PowerMonitor_51A.OperationalData.FrequencyMeasure3.Value",
+        "datatype": "Float",
+        "value": "Value",
+        "name": "",
+        "x": 360,
+        "y": 1240,
+        "wires": [
+            [
+                "6df2a8c3d3b34a5d"
+            ]
+        ]
+    },
+    {
+        "id": "8f87a0ff0773036a",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 13",
+        "func": "msg.payload = Number(msg.payload.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 1240,
+        "wires": [
+            [
+                "3889d1f9b6247945",
+                "176bee643d47a798",
+                "bb070670a39e0096"
+            ]
+        ]
+    },
+    {
+        "id": "176bee643d47a798",
+        "type": "ui_text",
+        "z": "2553175a65489a4b",
+        "group": "104ee1233394cf46",
+        "order": 16,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Frecuencia 3 [HZ]",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 990,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "1d8fac33198b65b4",
+        "type": "OpcUa-Client",
+        "z": "2553175a65489a4b",
+        "endpoint": "75c70c8f430906f5",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": true,
+        "name": "",
+        "x": 1700,
+        "y": 840,
+        "wires": [
+            [
+                "e7338eb82e212e4b"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b8442067fac4f011",
+        "type": "debug",
+        "z": "2553175a65489a4b",
+        "name": "debug 27",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2080,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "2b5c05729df8f02f",
+        "type": "inject",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1320,
+        "y": 840,
+        "wires": [
+            [
+                "d11794b74e26ec79"
+            ]
+        ]
+    },
+    {
+        "id": "d11794b74e26ec79",
+        "type": "OpcUa-Item",
+        "z": "2553175a65489a4b",
+        "item": "ns=3;s=AASROOT.PowerMonitor_51A.OperationalData.CurrentMeasure1.Value",
+        "datatype": "Double",
+        "value": "Value",
+        "name": "",
+        "x": 1500,
+        "y": 840,
+        "wires": [
+            [
+                "1d8fac33198b65b4"
+            ]
+        ]
+    },
+    {
+        "id": "76f4fdb0b551a09a",
+        "type": "ui_chart",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "group": "104ee1233394cf46",
+        "order": 23,
+        "width": 10,
+        "height": 7,
+        "label": "Current ",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "400",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 2340,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e7338eb82e212e4b",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 14",
+        "func": "msg.payload = Number(msg.payload.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1880,
+        "y": 840,
+        "wires": [
+            [
+                "76f4fdb0b551a09a",
+                "b8442067fac4f011",
+                "84120b2fbeedfccb"
+            ]
+        ]
+    },
+    {
+        "id": "1480f8c69073c8ef",
+        "type": "OpcUa-Client",
+        "z": "2553175a65489a4b",
+        "endpoint": "75c70c8f430906f5",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": true,
+        "name": "",
+        "x": 1700,
+        "y": 1040,
+        "wires": [
+            [
+                "4e844932cc6ea8c1"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "991cf7209c66df5d",
+        "type": "debug",
+        "z": "2553175a65489a4b",
+        "name": "debug 28",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2080,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "f463e729d67ca4bf",
+        "type": "inject",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1320,
+        "y": 1040,
+        "wires": [
+            [
+                "7deaa33a54a906e4"
+            ]
+        ]
+    },
+    {
+        "id": "7deaa33a54a906e4",
+        "type": "OpcUa-Item",
+        "z": "2553175a65489a4b",
+        "item": "ns=3;s=AASROOT.PowerMonitor_51A.OperationalData.CurrentMeasure2.Value",
+        "datatype": "Float",
+        "value": "Value",
+        "name": "",
+        "x": 1500,
+        "y": 1040,
+        "wires": [
+            [
+                "1480f8c69073c8ef"
+            ]
+        ]
+    },
+    {
+        "id": "4e844932cc6ea8c1",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 15",
+        "func": "msg.payload = Number(msg.payload.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1880,
+        "y": 1040,
+        "wires": [
+            [
+                "991cf7209c66df5d",
+                "76f4fdb0b551a09a",
+                "09d3c671fe6e14b2"
+            ]
+        ]
+    },
+    {
+        "id": "84120b2fbeedfccb",
+        "type": "ui_text",
+        "z": "2553175a65489a4b",
+        "group": "104ee1233394cf46",
+        "order": 6,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Current 1 [A]",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 2090,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "93910f59a7631efa",
+        "type": "OpcUa-Client",
+        "z": "2553175a65489a4b",
+        "endpoint": "75c70c8f430906f5",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": true,
+        "name": "",
+        "x": 1700,
+        "y": 1240,
+        "wires": [
+            [
+                "06c4bb6f98443691"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f36da2c1f48ac8a5",
+        "type": "debug",
+        "z": "2553175a65489a4b",
+        "name": "debug 29",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2080,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "652c57a4fd3c21fb",
+        "type": "inject",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1320,
+        "y": 1240,
+        "wires": [
+            [
+                "51ed607daec0ec99"
+            ]
+        ]
+    },
+    {
+        "id": "06c4bb6f98443691",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 16",
+        "func": "msg.payload = Number(msg.payload.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1880,
+        "y": 1240,
+        "wires": [
+            [
+                "f36da2c1f48ac8a5",
+                "43f58187b06f2d55",
+                "76f4fdb0b551a09a"
+            ]
+        ]
+    },
+    {
+        "id": "43f58187b06f2d55",
+        "type": "ui_text",
+        "z": "2553175a65489a4b",
+        "group": "104ee1233394cf46",
+        "order": 7,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Current 3 [A]",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 2110,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "0bda1323241f208e",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 17",
+        "func": "const umbral = 0.96; // Define el umbral\nif (msg.payload < umbral) {\n    msg.payload = `⚠️ Alerta: El valor ${msg.payload} está por debajo del umbral de ${umbral}.`;\n    return msg; // Envía el mensaje si está por debajo del umbral\n} else {\n    return null; // No hace nada si el valor está por encima\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1890,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bc28aa678fc08a52",
+        "type": "OpcUa-Client",
+        "z": "2553175a65489a4b",
+        "endpoint": "75c70c8f430906f5",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": true,
+        "name": "",
+        "x": 1680,
+        "y": 1560,
+        "wires": [
+            [
+                "e16069cb4ff260c3",
+                "26f2041ff7649326"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b709a332a6e036fe",
+        "type": "debug",
+        "z": "2553175a65489a4b",
+        "name": "debug 30",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2060,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "c023f5b058dc15df",
+        "type": "inject",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1300,
+        "y": 1560,
+        "wires": [
+            [
+                "2ed5d4e8da5e06f4"
+            ]
+        ]
+    },
+    {
+        "id": "2ed5d4e8da5e06f4",
+        "type": "OpcUa-Item",
+        "z": "2553175a65489a4b",
+        "item": "ns=3;s=AASROOT.PowerMonitor_51A.OperationalData.TotalInstantaneousActivePower.Value",
+        "datatype": "Double",
+        "value": "Value",
+        "name": "",
+        "x": 1480,
+        "y": 1560,
+        "wires": [
+            [
+                "bc28aa678fc08a52"
+            ]
+        ]
+    },
+    {
+        "id": "e16069cb4ff260c3",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 18",
+        "func": "msg.payload = Number(msg.payload.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1860,
+        "y": 1560,
+        "wires": [
+            [
+                "b709a332a6e036fe",
+                "d387b6aa6fcc4266",
+                "eda020feb218419b",
+                "540f8856bcb4462d"
+            ]
+        ]
+    },
+    {
+        "id": "d387b6aa6fcc4266",
+        "type": "ui_text",
+        "z": "2553175a65489a4b",
+        "group": "104ee1233394cf46",
+        "order": 4,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Potencia Activa Instantanea",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 2120,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "26f2041ff7649326",
+        "type": "function",
+        "z": "2553175a65489a4b",
+        "name": "function 19",
+        "func": "const umbral = 1100; // Define el umbral\nif (msg.payload > umbral) {\n    msg.payload = `⚠️ Alerta: El valor ${msg.payload} está por encima del umbral de ${umbral}.`;\n    return msg; // Envía el mensaje si está por encima del umbral\n} else {\n    return null; // No hace nada si el valor está por debajo\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1870,
+        "y": 1480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eda020feb218419b",
+        "type": "ui_gauge",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "group": "104ee1233394cf46",
+        "order": 19,
+        "width": 10,
+        "height": 7,
+        "gtype": "gage",
+        "title": "Total Instantaneous Active Power (kW)",
+        "label": "kW",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "2000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "450",
+        "seg2": "900",
+        "diff": false,
+        "className": "",
+        "x": 2150,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "ca4074863f394162",
+        "type": "ui_gauge",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "group": "104ee1233394cf46",
+        "order": 21,
+        "width": 10,
+        "height": 7,
+        "gtype": "gage",
+        "title": "PF Average",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#b30000",
+            "#e6e600",
+            "#74cb3a"
+        ],
+        "seg1": "0.96",
+        "seg2": "0.98",
+        "diff": false,
+        "className": "",
+        "x": 2110,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "09d3c671fe6e14b2",
+        "type": "ui_text",
+        "z": "2553175a65489a4b",
+        "group": "104ee1233394cf46",
+        "order": 8,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Current 2 [A]",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 2090,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "51ed607daec0ec99",
+        "type": "OpcUa-Item",
+        "z": "2553175a65489a4b",
+        "item": "ns=3;s=AASROOT.PowerMonitor_51A.OperationalData.CurrentMeasure3.Value",
+        "datatype": "Float",
+        "value": "Value",
+        "name": "",
+        "x": 1500,
+        "y": 1240,
+        "wires": [
+            [
+                "93910f59a7631efa"
+            ]
+        ]
+    },
+    {
+        "id": "540f8856bcb4462d",
+        "type": "ui_chart",
+        "z": "2553175a65489a4b",
+        "name": "",
+        "group": "104ee1233394cf46",
+        "order": 38,
+        "width": 0,
+        "height": 0,
+        "label": "Total Instantaneous Active Power (kW)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "800",
+        "removeOlder": "2",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 2170,
+        "y": 1760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "75c70c8f430906f5",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.1.209:51210/freeopcua/server/",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "104ee1233394cf46",
+        "type": "ui_group",
+        "name": "Dashboard_Energy",
+        "tab": "6df135175e61dcfd",
+        "order": 2,
+        "disp": true,
+        "width": "30",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6df135175e61dcfd",
+        "type": "ui_tab",
+        "name": "Energía",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    }
+]
