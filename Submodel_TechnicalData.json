@@ -1,0 +1,391 @@
+{
+  "idShort": "TechnicalData",
+  "description": [
+    {
+      "language": "DE",
+      "text": "Submodel f\u00FCr technische Daten eines Assets und zugeh\u00F6rige Konformit\u00E4ten zu Produktklassifikationen"
+    },
+    {
+      "language": "EN",
+      "text": "Submodel containing techical data to the asset and associated product classificatons"
+    }
+  ],
+  "administration": {
+    "version": "1",
+    "revision": "1"
+  },
+  "id": "https://example.com/ids/sm/9361_8131_6042_7557",
+  "kind": "Instance",
+  "semanticId": {
+    "type": "ExternalReference",
+    "keys": [
+      {
+        "type": "Submodel",
+        "value": "http://admin-shell.io/sandbox/SG2/TechnicalData/Submodel/1/1"
+      }
+    ]
+  },
+  "submodelElements": [
+    {
+      "idShort": "CurrentMeasure",
+      "value": [
+        {
+          "category": "PARAMETER",
+          "idShort": "MeasurementChannels",
+          "description": [
+            {
+              "language": "en",
+              "text": "number of 5 A current measurement channels"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": ""
+              },
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///63213#KEA016"
+              }
+            ]
+          },
+          "valueType": "xs:double",
+          "value": "4",
+          "modelType": "Property"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "Accuracy",
+          "semanticId": {
+            "type": "ModelReference",
+            "keys": []
+          },
+          "valueType": "xs:double",
+          "value": "\u00B1 0.5 %",
+          "modelType": "Property"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "InputSecondaryCurrentRange",
+          "description": [
+            {
+              "language": "en",
+              "text": "Input Secondary Current"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///62720#UAA101"
+              }
+            ]
+          },
+          "valueType": "xs:double",
+          "min": "1",
+          "max": "5",
+          "modelType": "Range"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "InputPrincipalCurrentRange",
+          "description": [
+            {
+              "language": "en",
+              "text": "Input Principal Current Range"
+            },
+            {
+              "language": "es",
+              "text": "Rango de corriente de entrada"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///62720#UAA101"
+              }
+            ]
+          },
+          "valueType": "xs:string",
+          "min": "0",
+          "max": "8000",
+          "modelType": "Range"
+        },
+        {
+          "idShort": "CurrentMeasuringResolution",
+          "description": [
+            {
+              "language": "en",
+              "text": "Current Measuring Resolution"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///62720#UAA101"
+              }
+            ]
+          },
+          "embeddedDataSpecifications": [],
+          "valueType": "xs:string",
+          "value": "0.001",
+          "modelType": "Property"
+        }
+      ],
+      "modelType": "SubmodelElementCollection"
+    },
+    {
+      "idShort": "VoltageMeasure",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of data about Voltage measuring "
+        }
+      ],
+      "value": [
+        {
+          "idShort": "MeasurementRangeVoltageL_L",
+          "description": [
+            {
+              "language": "en",
+              "text": "Measurement range, voltage L-L, AC"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABN618#001"
+              }
+            ]
+          },
+          "valueType": "xs:double",
+          "min": "0",
+          "max": "500",
+          "modelType": "Range"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "MeasurementRangeVoltageL_N_1P3W",
+          "description": [
+            {
+              "language": "en",
+              "text": "1P3W (Single-Phase Three-Wire) - measure signal-phase three-wire power lines, It includes a single-phase load connected between three conductor"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABN618#001"
+              }
+            ]
+          },
+          "valueType": "xs:string",
+          "min": "0",
+          "max": "250",
+          "modelType": "Range"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "MeasurementRangeVoltageL_N_3P4W",
+          "description": [
+            {
+              "language": "en",
+              "text": "3P4W (Three-Phase Four-Wire)- measure three-phase four-wire power lines, It includes three-phase loads connected between four conductors (live, neutral, and ground)"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABN618#001"
+              }
+            ]
+          },
+          "valueType": "xs:string",
+          "min": "0",
+          "max": "289",
+          "modelType": "Range"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "MeasuringAccuracyVoltage",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": []
+          },
+          "valueType": "xs:string",
+          "value": "0.5 %",
+          "modelType": "Property"
+        }
+      ],
+      "modelType": "SubmodelElementCollection"
+    },
+    {
+      "category": "PARAMETER",
+      "idShort": "CommunicationData",
+      "description": [
+        {
+          "language": "en",
+          "text": "Data about communication"
+        }
+      ],
+      "value": [
+        {
+          "category": "PARAMETER",
+          "idShort": "Interface",
+          "valueType": "xs:string",
+          "value": "RS485: Autobaud, 9,6 \u2013 115.2 kbps (pluggable screw terminals), USB",
+          "modelType": "Property"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "Protocol",
+          "valueType": "xs:string",
+          "value": " Modbus RTU",
+          "modelType": "Property"
+        }
+      ],
+      "modelType": "SubmodelElementCollection"
+    },
+    {
+      "idShort": "TechnicalDocumentation",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/sandbox/SG2/TechnicalData/TechnicalProperties/1/1"
+          }
+        ]
+      },
+      "value": [
+        {
+          "idShort": "UserManual",
+          "description": [
+            {
+              "language": "en",
+              "text": "User\u0027s manual"
+            },
+            {
+              "language": "es",
+              "text": "Manual de Usuarios"
+            }
+          ],
+          "value": "/1470260000_POWER_MONITOR_51A_es.pdf",
+          "contentType": "application/pdf",
+          "modelType": "File"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "SoftwareVersion",
+          "description": [
+            {
+              "language": "en",
+              "text": "for download: https://catalog.weidmueller.com/catalog/Start.do?localeId=es\u0026ObjectID=1470260000"
+            }
+          ],
+          "valueType": "xs:string",
+          "value": "Power Monitor Manager V. 1.31",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "ElectricalConnections",
+          "value": "/1481410000_00_10_13_IS_Power_Monitor_51A_(1)-conection.PDF",
+          "contentType": "",
+          "modelType": "File"
+        },
+        {
+          "idShort": "ModbusRegisters",
+          "value": "/power_monitor_51a_modbus_registers.xlsx",
+          "contentType": "",
+          "modelType": "File"
+        }
+      ],
+      "modelType": "SubmodelElementCollection"
+    },
+    {
+      "category": "PARAMETER",
+      "idShort": "PowerMeasurement",
+      "value": [
+        {
+          "idShort": "ActivePowerMeasurement",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///62720#UAA306"
+              }
+            ]
+          },
+          "valueType": "xs:string",
+          "min": "0",
+          "max": "9.999.999,9",
+          "modelType": "Range"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "ReactivePowerMeasurement",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABN715#001"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [],
+          "valueType": "xs:string",
+          "min": "0",
+          "max": "9.999.999,9",
+          "modelType": "Range"
+        }
+      ],
+      "modelType": "SubmodelElementCollection"
+    },
+    {
+      "idShort": "MaxFrequencyMeasurement",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "0112/2///61987#ABN624#001"
+          }
+        ]
+      },
+      "valueType": "xs:string",
+      "value": "99.99",
+      "modelType": "Property"
+    },
+    {
+      "idShort": "MaxTemperatureMeasurement",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "0112/2///61987#ABA927#005"
+          }
+        ]
+      },
+      "valueType": "xs:string",
+      "value": "100",
+      "modelType": "Property"
+    }
+  ],
+  "modelType": "Submodel"
+}

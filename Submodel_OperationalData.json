@@ -1,0 +1,195 @@
+{
+  "idShort": "OperationalData",
+  "id": "https://example.com/ids/sm/5071_8131_6042_4794",
+  "kind": "Instance",
+  "submodelElements": [
+    {
+      "category": "VARIABLE",
+      "idShort": "CurrentMeasure1",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "0112/2///62720#UAA101"
+          }
+        ]
+      },
+      "valueType": "xs:string",
+      "value": "0.000",
+      "modelType": "Property"
+    },
+    {
+      "category": "VARIABLE",
+      "idShort": "CurrentMeasure2",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "0112/2///62720#UAA101"
+          }
+        ]
+      },
+      "valueType": "xs:string",
+      "value": "0.000",
+      "modelType": "Property"
+    },
+    {
+      "category": "VARIABLE",
+      "idShort": "CurrentMeasure3",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "0112/2///62720#UAA101"
+          }
+        ]
+      },
+      "valueType": "xs:string",
+      "value": "0.000",
+      "modelType": "Property"
+    },
+    {
+      "category": "VARIABLE",
+      "idShort": "FrecuancyMeasure1",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "0112/2///61987#ABN624#001"
+          }
+        ]
+      },
+      "valueType": "xs:string",
+      "value": "0.00",
+      "modelType": "Property"
+    },
+    {
+      "category": "VARIABLE",
+      "idShort": "FrecuancyMeasure2",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "0112/2///61987#ABN624#001"
+          }
+        ]
+      },
+      "valueType": "xs:string",
+      "value": "0.00",
+      "modelType": "Property"
+    },
+    {
+      "category": "VARIABLE",
+      "idShort": "FrecuancyMeasure3",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "0112/2///61987#ABN624#001"
+          }
+        ]
+      },
+      "valueType": "xs:string",
+      "value": "0.00",
+      "modelType": "Property"
+    },
+    {
+      "category": "VARIABLE",
+      "idShort": "VoltageMeasure1",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "0112/2///61987#ABN618#001"
+          }
+        ]
+      },
+      "valueType": "xs:float",
+      "value": "0.00",
+      "modelType": "Property"
+    },
+    {
+      "category": "VARIABLE",
+      "idShort": "VoltageMeasure2",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "0112/2///61987#ABN618#001"
+          }
+        ]
+      },
+      "valueType": "xs:string",
+      "value": "0.00",
+      "modelType": "Property"
+    },
+    {
+      "category": "VARIABLE",
+      "idShort": "VoltageMeasure3",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "0112/2///61987#ABN618#001"
+          }
+        ]
+      },
+      "valueType": "xs:string",
+      "value": "0.00",
+      "modelType": "Property"
+    },
+    {
+      "category": "VARIABLE",
+      "idShort": "PFAverage",
+      "description": [
+        {
+          "language": "en",
+          "text": "the ratio of the Average real power absorbed by the load to the average apparent power flowing in the circuit"
+        }
+      ],
+      "valueType": "xs:string",
+      "value": "0.00",
+      "modelType": "Property"
+    },
+    {
+      "category": "VARIABLE",
+      "idShort": "TotalInstantaneousActivePower",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "0112/2///62720#UAA306"
+          }
+        ]
+      },
+      "valueType": "xs:string",
+      "value": "0.000",
+      "modelType": "Property"
+    },
+    {
+      "category": "VARIABLE",
+      "idShort": "TotalIntegralActivePower",
+      "valueType": "xs:string",
+      "value": "0.000",
+      "modelType": "Property"
+    },
+    {
+      "category": "VARIABLE",
+      "idShort": "TotalIntegralReactivePower",
+      "valueType": "xs:string",
+      "value": "0.000",
+      "modelType": "Property"
+    }
+  ],
+  "modelType": "Submodel"
+}
